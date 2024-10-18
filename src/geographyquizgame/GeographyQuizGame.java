@@ -29,6 +29,27 @@ public class GeographyQuizGame {
         //This while loop is used later to let the user continue playing / restart the program
         while (PlayAgain) {
            
+            System.out.println("            _.-,=_\"\"\"--,_\n" +
+"        .-\" =/7\"   _  .3#\"=.\n" +
+"      ,#7  \" \"  ,//)#d#######=.\n" +
+"    ,/ \"      # ,i-/###########=\n" +
+"   /         _)#sm###=#=# #######\\\n" +
+"  /         (#/\"_`;\\//#=#\\-#######\\\n" +
+" /         ,d####-_.._.)##P########\\\n" +
+",        ,\"############\\\\##bi- `\\| Y.\n" +
+"|       .d##############b\\##P'   V  |\n" +
+"|\\      '#################!\",       |\n" +
+"|C.       \\###=############7        |\n" +
+"'###.           )#########/         '\n" +
+" \\#(             \\#######|         /\n" +
+"  \\B             /#######7 /      /\n" +
+"   \\             \\######\" /\"     /\n" +
+"    `.            \\###7'       ,'\n" +
+"      \"-_          `\"'      ,-'\n" +
+"         \"-._           _.-\"\n" +
+"             \"\"\"\"---\"\"\"\"");
+            
+            //Credit to Martin Schaffner for this Globe via ascii.co.uk
             
             System.out.println("\nHello!\n");
 
@@ -271,4 +292,5 @@ public class GeographyQuizGame {
  
             
         }
-  
+}
+      
