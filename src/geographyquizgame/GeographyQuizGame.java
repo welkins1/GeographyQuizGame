@@ -2,15 +2,10 @@
 //GitHub Username: welkins1
 
 
-//Used for user input
-import java.util.Scanner;
+//Wildcard util import. 
+import java.util.*;
 
-//Used for Array Lists
-import java.util.ArrayList;
-
-//Used for randomization of questions
-import java.util.Collections;
-
+//Utils used: Scanner, ArrayList, and Collections. 
 
 class QuestionAnswerPair {
     
