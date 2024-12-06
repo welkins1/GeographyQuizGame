@@ -1,5 +1,5 @@
 
-# GeoGraphyQuizGame
+# GeoGraphyQuizGame 🌎
 
 This is my second Java program that I've decided to upload on GitHub. 
 It's a program that allows you to play a simple Geography quiz with varying difficulties.
