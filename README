@@ -1,6 +1,7 @@
-# GeographyQuizGame 
 
-This is my second Java project that I've decided to upload on GitHub. 
+# GeoGraphyQuizGame
+
+This is my second Java program that I've decided to upload on GitHub. 
 It's a program that allows you to play a simple Geography quiz with varying difficulties.
 
 This project took way longer than I thought, mainly because I wanted features in the program that I 
@@ -16,3 +17,8 @@ thread.sleep function and how to correctly display the dots. The java.util.Colle
 also interesting to learn about, and it was relatively easy to input.
 
 Overall, I learned a lot in this program, and I'll continue to study what I learned.
+
+# ⚙️ Setup
+
+You can run this program by downloading the .java file and running ```java GeoGraphyQuizGame.java``` in the directory you installed it in. 
+
