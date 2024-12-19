@@ -1,34 +1,31 @@
 //Programmer Name: Austin
 //GitHub Username: welkins1
 
-
 //Wildcard util import. 
 import java.util.*;
 
 //Utils used: Scanner, ArrayList, and Collections. 
-
 class QuestionAnswerPair {
-    
+
     //Question variable holds the question, answer variable holds the answer 
     private String question;
     private String answer;
-    
-    
+
     //This creates a question and answer pair 
     public QuestionAnswerPair(String question, String answer) {
-        
+
         //Using "this" makes it so the program specifically knows which variable/object to refer to,
         this.question = question;
         this.answer = answer;
     }
-    
+
     //Method to get the question
-    public String getQuestion () {
+    public String getQuestion() {
         return question;
     }
-    
+
     //Method to get the answer 
-    public String getAnswer () {
+    public String getAnswer() {
         return answer;
     }
 }
@@ -36,47 +33,43 @@ class QuestionAnswerPair {
 public class GeographyQuizGame {
 
     public static void main(String[] args) {
-        
-    
-        
 
         //This boolean is used for the PlayAgain while loop
         boolean PlayAgain = true;
-        
-        
+
         //Program descrption
-        
         //This while loop is used later to let the user continue playing / restart the program
         while (PlayAgain) {
-           
-              System.out.println("            _.-,=_\"\"\"--,_\n" +
-"        .-\" =/7\"   _  .3#\"=.\n" +
-"      ,#7  \" \"  ,//)#d#######=.\n" +
-"    ,/ \"      # ,i-/###########=\n" +
-"   /         _)#sm###=#=# #######\\\n" +
-"  /         (#/\"_`;\\//#=#\\-#######\\\n" +
-" /         ,d####-_.._.)##P########\\\n" +
-",        ,\"############\\\\##bi- `\\| Y.\n" +
-"|       .d##############b\\##P'   V  |\n" +
-"|\\      '#################!\",       |\n" +
-"|C.       \\###=############7        |\n" +
-"'###.           )#########/         '\n" +
-" \\#(             \\#######|         /\n" +
-"  \\B             /#######7 /      /\n" +
-"   \\             \\######\" /\"     /\n" +
-"    `.            \\###7'       ,'\n" +
-"      \"-_          `\"'      ,-'\n" +
-"         \"-._           _.-\"\n" +
-"             \"\"\"\"---\"\"\"\"");
-            
+
+            System.out.println("            _.-,=_\"\"\"--,_\n"
+                    + "        .-\" =/7\"   _  .3#\"=.\n"
+                    + "      ,#7  \" \"  ,//)#d#######=.\n"
+                    + "    ,/ \"      # ,i-/###########=\n"
+                    + "   /         _)#sm###=#=# #######\\\n"
+                    + "  /         (#/\"_`;\\//#=#\\-#######\\\n"
+                    + " /         ,d####-_.._.)##P########\\\n"
+                    + ",        ,\"############\\\\##bi- `\\| Y.\n"
+                    + "|       .d##############b\\##P'   V  |\n"
+                    + "|\\      '#################!\",       |\n"
+                    + "|C.       \\###=############7        |\n"
+                    + "'###.           )#########/         '\n"
+                    + " \\#(             \\#######|         /\n"
+                    + "  \\B             /#######7 /      /\n"
+                    + "   \\             \\######\" /\"     /\n"
+                    + "    `.            \\###7'       ,'\n"
+                    + "      \"-_          `\"'      ,-'\n"
+                    + "         \"-._           _.-\"\n"
+                    + "             \"\"\"\"---\"\"\"\"");
+
             //Credit to Martin Schaffner for this Globe via ascii.co.uk
-            
             System.out.println("\nHello!\n");
 
             System.out.println("Welcome to the World Geography Quiz game.\n");
-            
+
             System.out.println("This game tests your knowlege on various World Geography facts"
                     + " such as capitals, continents, flags, and populations.\n");
+
+            System.out.println("Type 'q' to quit at any time.");
 
             //Creates aray list for EasyQA
             ArrayList<QuestionAnswerPair> EasyQA = new ArrayList<>();
@@ -133,14 +126,12 @@ public class GeographyQuizGame {
             EasyQA.add(new QuestionAnswerPair("What is the primary language spoken in Brazil? ", "Portuguese"));
 
             EasyQA.add(new QuestionAnswerPair("What is the capital of the United Kingdom? ", "London"));
-    
+
             EasyQA.add(new QuestionAnswerPair("Which ocean lies to the west of the United States? ", "Pacific Ocean"));
 
             EasyQA.add(new QuestionAnswerPair("Which country is famous for its Great Wall? ", "China"));
 
             EasyQA.add(new QuestionAnswerPair("What is the smallest continent by land area? ", "Australia"));
-
-
 
             //Create array list for MediumQA
             ArrayList<QuestionAnswerPair> MediumQA = new ArrayList<>();
@@ -154,7 +145,7 @@ public class GeographyQuizGame {
 
             MediumQA.add(new QuestionAnswerPair("What is the capital of Sweden? ", "Stockholm"));
 
-            MediumQA.add(new QuestionAnswerPair("Which of the following countries do not have red, white, or blue on their flag?\n \nRussia, Japan, Indonesia, or Jamaica ", "Jamaica"));
+            MediumQA.add(new QuestionAnswerPair("Which of the following countries do not have red, white, or blue on their flag?\n \nRussia, Japan, Indonesia, or Jamaica? ", "Jamaica"));
 
             MediumQA.add(new QuestionAnswerPair("What is the longest river in South America? ", "Amazon River"));
 
@@ -181,7 +172,6 @@ public class GeographyQuizGame {
             MediumQA.add(new QuestionAnswerPair("Which U.S. state is closest to the continent of Asia? ", "Alaska"));
 
             MediumQA.add(new QuestionAnswerPair("What is the largest island in the world? ", "Greenland"));
-
 
             //Creates array list for HardQA
             ArrayList<QuestionAnswerPair> HardQA = new ArrayList<>();
@@ -229,18 +219,20 @@ public class GeographyQuizGame {
 
             HardQA.add(new QuestionAnswerPair("What is the only country that shares a land border with Brunei? ", "Malaysia"));
 
-
             //Array place holder for Difficulty + corresponding answers, a value of null is used to ensure the Array has no questions, but questions can be added
             ArrayList<QuestionAnswerPair> selectedQA = null;
 
             //Creates Scanner input
             Scanner input = new Scanner(System.in);
-            System.out.print("Please select your difficutly (Easy, Medium or Hard): ");
+            System.out.print("\nPlease select your difficutly (Easy, Medium or Hard): ");
 
             //Converts difficulty string to lowercase for less percise input
             String Difficulty = input.nextLine();
 
-            
+            if (Difficulty.equalsIgnoreCase("q")) {
+                return; //quits program 
+            }
+
             //Loop for invalid input
             while (true) {
 
@@ -259,13 +251,13 @@ public class GeographyQuizGame {
                     //Invalid input else
                     System.out.print("\nInvalid difficutly, please select again: ");
                     Difficulty = input.nextLine().toLowerCase();
-                    
+
                 }
 
             }
 
             //Displays selected difficutly. 
-            System.out.println("\nYou selected " + Difficulty + " difficulty.\n");
+            System.out.println("\nYou selected " + Difficulty.toLowerCase() + " difficulty.\n");
 
             System.out.print("Loading questions");
             //For loop to simulate loading questions
@@ -292,15 +284,19 @@ public class GeographyQuizGame {
             //Shuffles the questions 
             Collections.shuffle(selectedQA);
 
-             //Stores currentTime in milliseconds at the start of the quiz (acts as a timer)
-             long StartTime = System.currentTimeMillis();
-             
+            //Stores currentTime in milliseconds at the start of the quiz (acts as a timer)
+            long StartTime = System.currentTimeMillis();
+
             //Displays the first question
             QuestionAnswerPair firstQA = selectedQA.get(0);
             System.out.print(firstQA.getQuestion());
 
             //Declaring user input/Answer
             String QuestionAnswer = input.nextLine();
+
+            if (QuestionAnswer.equalsIgnoreCase("q")) {
+                return;
+            }
 
             if (QuestionAnswer.equalsIgnoreCase(firstQA.getAnswer())) {
                 System.out.println("\nCorrect!\n");
@@ -310,8 +306,6 @@ public class GeographyQuizGame {
                 System.out.println("\nIncorrect! " + "The correct answer was " + firstQA.getAnswer() + ".\n");
 
             }
-
-          
 
             //Displays the second question
             QuestionAnswerPair SecondQA = selectedQA.get(1);
@@ -343,8 +337,6 @@ public class GeographyQuizGame {
                 System.out.println("\nIncorrect! " + "The correct answer was " + ThirdQA.getAnswer() + ".\n");
             }
 
-          
-
             ////Displays the fourth question
             QuestionAnswerPair FourthQA = selectedQA.get(3);
             System.out.print(FourthQA.getQuestion());
@@ -361,11 +353,11 @@ public class GeographyQuizGame {
 
             //Stores the currentTime in milliseconds at the end of the quiz 
             long endTime = System.currentTimeMillis();
-           
+
             System.out.println("You've answered all the questions.\n");
 
             System.out.print("Calculating Score");
-            
+
             //For loop to simulate loading questions
             for (int i = 0; i < 5; i++) {
 
@@ -382,49 +374,40 @@ public class GeographyQuizGame {
 
             }
 
-            
             //Displays the score based on the score++
             double percentage = (score / 4) * 100;
             System.out.println("\n\nYou got " + (int) score + " out of 4 answers correct!" + "(" + (int) percentage + "%)");
 
-            
-            
             //Calculation for the quiz time
             long testTime = endTime - StartTime;
-            
+
             //Displays the test time in seconds 
-            System.out.printf("\nTest time: " + "%.2f"  + " seconds.\n", (double)(testTime/1000.0));
-            
+            System.out.printf("\nTest time: " + "%.2f" + " seconds.\n", (double) (testTime / 1000.0));
+
             //Asks the user if they want to play again 
             System.out.print("\nPlay Again? (Yes/No) ");
-            
+
             //User input for continuing
             String PlayAgainInput = input.next();
-            
+
             //This while loops is use for invalid input 
             while (!PlayAgainInput.equalsIgnoreCase("yes") && !PlayAgainInput.equalsIgnoreCase("no")) {
                 System.out.print("\nInvalid input, please type yes or no: ");
                 PlayAgainInput = input.next();
             }
-            
-            
-            
+
             if (PlayAgainInput.equalsIgnoreCase("no")) {
                 //Ending output!
                 System.out.println("\nThanks for playing! " + "(:\n");
-                
+
                 //If PlayAgain is false, the while loop doesn't run, therefore the program terminates naturally
                 PlayAgain = false;
-            } else if (PlayAgainInput.equalsIgnoreCase("yes")) 
-                
-                //If PlayAgain is true, the while loop loops
+            } else if (PlayAgainInput.equalsIgnoreCase("yes")) //If PlayAgain is true, the while loop loops
+            {
                 PlayAgain = true;
-               
-                
+            }
+
         } //end of while loop
 
- 
-            
-        }
+    }
 }
-      
