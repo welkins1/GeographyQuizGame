@@ -43,16 +43,27 @@ public class GeographyQuizGame {
         }
       
     }
+    //FadeIn is overloaded to include ASCII and Program description compatibility
+    public static void FadeIn(String[] StringArray, int speed) throws InterruptedException {
+         for (String line : StringArray) {
+            for (char c : line.toCharArray()) {
+                System.out.print(c);
+                Thread.sleep(speed); // thread is paused for 1 millisecond
+            }
+            System.out.println(); //spacer 
+        }
+        
+    }
     
     //This method simulates a loading feature
-    public static void Loading(String words) throws InterruptedException { //try- catch doesn't have to be used with thrown exception 
+    public static void Loading(String words, int speed) throws InterruptedException { //try- catch doesn't have to be used with thrown exception 
        
         System.out.print(words);
         //For loop to simulate loading questions
         for (int i = 0; i < 5; i++) {
 
             //Slows down the time in miliseconds 
-            Thread.sleep(500);
+            Thread.sleep(speed);
             //printed to the console based on i < 5
             System.out.print(".");
 
@@ -92,38 +103,18 @@ public class GeographyQuizGame {
                   "                  \"-._           _.-\"" ,
                   "                      \"\"\"\"---\"\"\"\""};
 
-           
-           //For each loop prints each line of the ASCII art char by char
-            for (String line : Globe) {
-            for (char c : line.toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(1); // thread is paused for 1 millisecond
-            }
-            System.out.println(); //spacer 
-        }
-    
-                
-                 //Program descrption
-           
-            String Description [] = {"Hello!", 
-           "\nWelcome to the World Geography Quiz game.\n", 
-           "This game tests your knowlege on various World Geography facts\n" +
-            "such as capitals, continents, flags, and populations.",                    
-           "\nType 'q' to quit at any time"};
-                               
-        
-            //For each loop prints each line of the program description char by char
-            for (String line: Description) {
-               for (char c: line.toCharArray()) {
-                   System.out.print(c);
-                   Thread.sleep(5); //sleeps for 5 milliseconds 
-               }
-            System.out.println(); //spacer 
-        }
-                   
-            
-                  
+            //Call to FadeIn method for ASCII 
+            FadeIn(Globe, 1);
 
+            //Program descrption
+            String Description[] = {"Hello!",
+                "\nWelcome to the World Geography Quiz game.\n",
+                "This game tests your knowlege on various World Geography facts\n"
+                + "such as capitals, continents, flags, and populations.",
+                "\nType 'q' to quit at any time"};
+
+            //Call to FadeIn method for Description string
+            FadeIn(Description, 5);
 
             //Creates aray list for EasyQA
             ArrayList<QuestionAnswerPair> EasyQA = new ArrayList<>();
@@ -278,7 +269,7 @@ public class GeographyQuizGame {
 
             //Creates Scanner input
             Scanner input = new Scanner(System.in);
-            System.out.print("\nPlease select your difficutly (Easy, Medium or Hard): ");
+            FadeIn("\nPlease select your difficutly (Easy, Medium or Hard): ", 20);
 
             //Converts difficulty string to lowercase for less percise input
             String Difficulty = input.nextLine();
@@ -306,7 +297,7 @@ public class GeographyQuizGame {
                     
                 } else {
                     //Invalid input else
-                    System.out.print("\nInvalid difficutly, please select again: ");
+                    FadeIn("\nInvalid difficutly, please select again: ", 20);
                     Difficulty = input.nextLine().toLowerCase();
 
                 }
@@ -317,7 +308,7 @@ public class GeographyQuizGame {
             FadeIn("\nYou selected " + Difficulty.toLowerCase() + " difficulty.\n\n", 50);
 
               //Call to Loading transition method 
-            Loading("Loading Questions");
+            Loading("Loading Questions", 500);
           
 
             //Variable for calculating score
@@ -331,7 +322,7 @@ public class GeographyQuizGame {
       
             //Displays the first question
             QuestionAnswerPair firstQA = selectedQA.get(0);
-            FadeIn(firstQA.getQuestion(), 30);
+            FadeIn("1. " + firstQA.getQuestion(), 30);
 
             //Declaring user input/Answer
             String QuestionAnswer = input.nextLine();
@@ -341,18 +332,18 @@ public class GeographyQuizGame {
             
 
             if (QuestionAnswer.equalsIgnoreCase(firstQA.getAnswer())) {
-                System.out.println("\nCorrect!\n");
+                FadeIn("\nCorrect!\n\n", 10);
                 //If correct, score increases by 1
                 score++;
             } else {
-                System.out.println("\nIncorrect! " + "The correct answer was " + firstQA.getAnswer() + ".\n");
+                FadeIn("\nIncorrect! " + "The correct answer was " + firstQA.getAnswer() + ".\n\n", 20);
 
             }
 
             
             //Displays the second question
             QuestionAnswerPair SecondQA = selectedQA.get(1);
-            FadeIn(SecondQA.getQuestion(), 30);
+            FadeIn("2. " + SecondQA.getQuestion(), 30);
 
             QuestionAnswer = input.nextLine();
             
@@ -360,17 +351,17 @@ public class GeographyQuizGame {
                 return;
 
             if (QuestionAnswer.equalsIgnoreCase(SecondQA.getAnswer())) {
-                System.out.println("\nCorrect!\n");
+                FadeIn("\nCorrect!\n\n", 10);
                 //If correct, score increases by 1
                 score++;
             } else {
-                System.out.println("\nIncorrect! " + "The correct answer was " + SecondQA.getAnswer() + ".\n");
+                FadeIn("\nIncorrect! " + "The correct answer was " + SecondQA.getAnswer() + ".\n\n", 20);
 
             }
 
             //Displays the third question
             QuestionAnswerPair ThirdQA = selectedQA.get(2);
-            FadeIn(ThirdQA.getQuestion(), 30);
+            FadeIn("3. "+ ThirdQA.getQuestion(), 30);
 
             QuestionAnswer = input.nextLine();
             
@@ -378,16 +369,16 @@ public class GeographyQuizGame {
                 return;
 
             if (QuestionAnswer.equalsIgnoreCase(ThirdQA.getAnswer())) {
-                System.out.println("\nCorrect!\n");
+                FadeIn("\nCorrect!\n\n", 10);
                 //If correct, score increases by 1
                 score++;
             } else {
-                System.out.println("\nIncorrect! " + "The correct answer was " + ThirdQA.getAnswer() + ".\n");
+                FadeIn("\nIncorrect! " + "The correct answer was " + ThirdQA.getAnswer() + ".\n\n", 20);
             }
 
             //Displays the fourth question
             QuestionAnswerPair FourthQA = selectedQA.get(3);
-            FadeIn(FourthQA.getQuestion(), 30);
+            FadeIn("4. " + FourthQA.getQuestion(), 30 );
 
             QuestionAnswer = input.nextLine();
             
@@ -395,16 +386,16 @@ public class GeographyQuizGame {
                 return;
 
             if (QuestionAnswer.equalsIgnoreCase(FourthQA.getAnswer())) {
-                System.out.println("\nCorrect!\n");
+                FadeIn("\nCorrect!\n\n", 10);
                 //If correct, score increases by 1
                 score++;
             } else {
-                System.out.println("\nIncorrect! " + "The correct answer was " + FourthQA.getAnswer() + ".\n");
+                FadeIn("\nIncorrect! " + "The correct answer was " + FourthQA.getAnswer() + ".\n\n", 20);
             }
             
             //Displays fith question 
              QuestionAnswerPair FithQA = selectedQA.get(4);
-            FadeIn(FithQA.getQuestion(), 30);
+            FadeIn("5. " + FithQA.getQuestion(), 30);
 
             QuestionAnswer = input.nextLine();
             
@@ -414,11 +405,11 @@ public class GeographyQuizGame {
             
 
             if (QuestionAnswer.equalsIgnoreCase(FithQA.getAnswer())) {
-                System.out.println("\nCorrect!\n");
+                FadeIn("\nCorrect!\n\n", 10);
                 //If correct, score increases by 1
                 score++;
             } else {
-                System.out.println("\nIncorrect! " + "The correct answer was " + FithQA.getAnswer() + ".\n");
+                FadeIn("\nIncorrect! " + "The correct answer was " + FithQA.getAnswer() + ".\n\n", 20);
             }
             
             //Stores the currentTime in milliseconds at the end of the quiz 
@@ -427,7 +418,7 @@ public class GeographyQuizGame {
            
             FadeIn("You've answered all the questions!\n", 50);
 
-            Loading("\nCalculating Score");
+            Loading("\nCalculating Score", 500);
 
           
             //Displays the score based on the score++
@@ -448,7 +439,7 @@ public class GeographyQuizGame {
 
             //This while loops is use for invalid input 
             while (!PlayAgainInput.equalsIgnoreCase("yes") && !PlayAgainInput.equalsIgnoreCase("no")) {
-                System.out.print("\nInvalid input, please type yes or no: ");
+                FadeIn("\nInvalid input, please type yes or no: ", 20);
                 PlayAgainInput = input.next();
             }
 
